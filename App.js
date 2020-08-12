@@ -7,12 +7,13 @@
  */
 
 import React from 'react';
-import {StatusBar} from 'react-native';
+import {StatusBar, StyleSheet} from 'react-native';
 import Swiper from 'react-native-swiper';
 
 import {THEME} from './src/constants';
 import Slide1 from './src/components/presentation/Slide1';
 import Slide from './src/components/presentation/Slide';
+import {Button} from 'react-native-elements';
 
 const App: () => React$Node = () => {
   return (
@@ -52,11 +53,31 @@ const App: () => React$Node = () => {
         <Slide
           theme={2}
           subtitle="That was it, you can start using the app"
-          icon="heart"
-        />
+          icon="heart">
+          <Button
+            titleStyle={styles.buttonTitleStyle}
+            buttonStyle={styles.button}
+            title="Let's go!"
+            type="solid"
+          />
+        </Slide>
       </Swiper>
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  buttonTitleStyle: {
+    color: THEME.black,
+    fontSize: 36,
+    fontFamily: 'Cabin-Regular',
+  },
+  button: {
+    marginTop: 16,
+    borderWidth: 0,
+    width: 150,
+    backgroundColor: THEME.primary,
+  },
+});
 
 export default App;

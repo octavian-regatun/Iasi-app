@@ -44,10 +44,11 @@ export default class Slide extends Component {
               size={100}
             />
           </View>
-          <View style={{flex: 1.5}}>
+          <View style={styles.subtitleView}>
             <Subtitle color={colors.subtitleColor}>
               {this.props.subtitle}
             </Subtitle>
+            {this.props.children}
           </View>
         </View>
       </>
@@ -62,4 +63,5 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   imageView: {flex: 2.5, alignItems: 'center', justifyContent: 'center'},
+  subtitleView: {flex: 1.5, alignItems: 'center'},
 });
